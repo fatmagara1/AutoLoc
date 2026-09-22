@@ -1,0 +1,92 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "AutoLoc-API",
+    "description": "Collection de tests des endpoints REST AutoLoc (Atelier 0 — base pour Atelier 5 et suivants).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "apiPrefix", "value": "/api" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Ping (placeholder)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actuator/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["actuator", "health"]
+            },
+            "description": "Verifier que l API Spring Boot est demarree."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vehicules",
+      "item": [
+        {
+          "name": "Lister les vehicules",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}{{apiPrefix}}/vehicules",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPrefix}}", "vehicules"]
+            },
+            "description": "Placeholder — Atelier 5+."
+          },
+          "response": []
+        },
+        {
+          "name": "Creer un vehicule",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"TU-123-TN\",\n  \"marque\": \"Renault\",\n  \"modele\": \"Clio\",\n  \"disponible\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}{{apiPrefix}}/vehicules",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPrefix}}", "vehicules"]
+            },
+            "description": "Placeholder — body a adapter selon le modele."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Locations",
+      "item": [
+        {
+          "name": "Lister les locations",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}{{apiPrefix}}/locations",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPrefix}}", "locations"]
+            },
+            "description": "Placeholder — ateliers suivants."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
